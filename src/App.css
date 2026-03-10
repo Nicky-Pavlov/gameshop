@@ -1,36 +1,66 @@
 .app-shell {
   min-height: 100vh;
   width: 100%;
+  max-width: 500px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
 }
 
-.top-nav {
+.bottom-nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(calc(100vw - 1rem), 500px);
+  padding: 0.6rem clamp(0.7rem, 3vw, 1rem) calc(0.6rem + env(safe-area-inset-bottom));
+  background: #f9f6f0;
+  border: none;
+  border-radius: 25px 25px 0 0;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.08);
+  z-index: 20;
 }
 
-.top-nav a {
-  display: inline-block;
-  padding: 0.5rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid #d0d6e0;
-  color: #1f2937;
-  font-weight: 600;
+.bottom-nav a {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 12px;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.top-nav a:hover {
-  border-color: #7c93ff;
+.bottom-nav a:hover {
+  background: #efe9dc;
+  transform: translateY(-1px);
 }
 
-.top-nav a.active {
-  background: #1d4ed8;
-  border-color: #1d4ed8;
-  color: #ffffff;
+.bottom-nav a.active {
+  background: transparent;
+  transform: translateY(-3px);
+}
+
+.bottom-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #dc2626;
+}
+
+.bottom-nav img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 .page-content {
@@ -38,6 +68,30 @@
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 1.5rem;
+  padding-bottom: 5.75rem;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 1rem 0.75rem;
+  }
+
+  .page-content {
+    padding: 1.1rem;
+    padding-bottom: 5.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .bottom-nav a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bottom-nav img {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 .page-content h1 {
