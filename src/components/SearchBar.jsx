@@ -1,7 +1,13 @@
-function SearchBar() {
+function SearchBar({ value, onChange }) {
 	return (
 		<form className="search-bar" role="search" onSubmit={(event) => event.preventDefault()}>
-			<input type="search" placeholder="Search" aria-label="Search games" />
+			<input
+				type="search"
+				placeholder="Search"
+				aria-label="Search games"
+				value={value}
+				onChange={(event) => onChange(event.target.value)}
+			/>
 			<button type="submit" aria-label="Search">
 				<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 					<path

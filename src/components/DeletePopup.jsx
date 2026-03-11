@@ -1,4 +1,4 @@
-function DeletePopup({ name, onClose }) {
+function DeletePopup({ name, onClose, onConfirm }) {
   return (
     <div className="delete-popup-backdrop" role="presentation">
       <div className="delete-popup" role="dialog" aria-modal="true" aria-label="Delete confirmation">
@@ -15,7 +15,7 @@ function DeletePopup({ name, onClose }) {
           <button
             type="button"
             className="delete-popup-button delete-popup-button-danger"
-            onClick={onClose}
+            onClick={onConfirm}
           >
             Delete
           </button>
