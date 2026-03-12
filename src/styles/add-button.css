@@ -1,0 +1,41 @@
+.add-button {
+  margin-top: 2.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: #B50000;
+  color: #ffffff;
+  width: 4.75rem;
+  height: 2.6875rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.add-button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.add-button-icon-image {
+  width: 16px;
+  height: 16px;
+  display: block;
+  line-height: 1;
+}
+
+.add-button-label {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -0.00963rem;
+}

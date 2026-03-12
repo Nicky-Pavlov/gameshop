@@ -1,0 +1,16 @@
+.explore-page {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.explore-logo {
+  width: 56px;
+  height: auto;
+  object-fit: contain;
+}
+
+.explore-header {
+  text-align: center;
+  margin-top: 0.6rem;
+}
